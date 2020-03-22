@@ -1,0 +1,193 @@
+//
+//  PrefixHeader.pch
+//  MovieSchool
+//
+//  Created by EDZ on 2019/8/1.
+//  Copyright © 2019 EDZ. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <AFNetworking.h>
+#import <IQKeyboardManager.h>
+#import <QMUIKit/QMUIKit.h>
+
+#import "MBProgressHUD.h"
+#import "SDAutoLayout.h"
+#import <Masonry.h>
+#import "NetTool.h"
+#import "MBaseViewController.h"
+#import "MBaseNavigationController.h"
+#import "MHost.h"
+#import "UserData.h"
+#endif /* PrefixHeader_pch */
+
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define APP_DELEGATE      (AppDelegate *)[UIApplication sharedApplication].delegate
+#define kIs_iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define kIs_iPhoneX SCREEN_WIDTH >=375.0f && SCREEN_HEIGHT >=812.0f&& kIs_iphone
+#define kTabBarHeight (CGFloat)(kIs_iPhoneX?(49.0 + 34.0):(49.0))
+#define RGBColor(r, g, b) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:1.0]
+#define HEXColor(str) [UIColor qmui_colorWithHexString:str]
+#define themeColor HEXColor(@"#07983d")
+#define MUICommonLineColor HEXColor(@"#d1d1d1")
+#define MLineColor HEXColor(@"#CCCCCC")
+#define bgColor HEXColor(@"#F7F7F7")
+#define systemFont(font) [UIFont systemFontOfSize:(font)]
+#define boldFont(font) [UIFont qmui_dynamicSystemFontOfSize:(font) weight:QMUIFontWeightBold italic:NO]
+
+#define _SUCCESS(dict) [(dict)[@"status"] integerValue] == 200
+#define _showError(str) [QMUITips showError:(str)];
+#define _showSuccess(str) [QMUITips showSucceed:(str)];
+#define _showNetError [QMUITips showError:error.localizedDescription];
+
+#define k_no_invitationCode @"no_invitationCode"
+#define k_choose_role @"choose_role"
+#define k_choose_editor @"choose_editor"
+#define k_choose_speaker @"choose_speaker"
+
+//验证手机号格式是否正确的正则
+#define CHECK_IS_PHONE(num) ^(){\
+NSString *pattern = @"(13\\d|14[579]|15[^4\\D]|17[^49\\D]|18\\d)\\d{8}";NSError *error = NULL;NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: pattern options: nil error: &error];NSArray *match = [regex matchesInString:num options: NSMatchingCompleted range: NSMakeRange(0, [num length])];if (match.count != 0) {return YES;} else {return NO;}\
+}()
+
+//验证身份证格式是否正确的正则
+#define CHECK_IS_IdCARD(num) ^(){\
+NSString *pattern = @"\\d{17}[0-9Xx]|\\d{15}";NSError *error = NULL;NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: pattern options: nil error: &error];NSArray *match = [regex matchesInString:num options: NSMatchingCompleted range: NSMakeRange(0, [num length])];if (match.count != 0) {return YES;} else {return NO;}\
+}()
+
+//验证邮箱格式是否正确的正则
+#define CHECK_IS_EMAIL(str) ^(){\
+NSString *pattern = @"\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}";NSError *error = NULL;NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: pattern options: nil error: &error];NSArray *match = [regex matchesInString:str options: NSMatchingCompleted range: NSMakeRange(0, [str length])];if (match.count != 0) {return YES;} else {return NO;}\
+}()
+
+//匹配双字节字符(包含汉字)的正则
+#define CHECK_IS_DOUBLEWORD(str) ^(){\
+NSString *pattern = @"[^\\x00-\\xff]+";NSError *error = NULL;NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: pattern options: nil error: &error];NSArray *match = [regex matchesInString:str options: NSMatchingCompleted range: NSMakeRange(0, [str length])];if (match.count != 0) {return YES;} else {return NO;}\
+}()
+
+//获取文字宽度
+#define WORD_W(str,font) ^(){\
+   CGSize sizeToFit = [str sizeWithFont:[UIFont systemFontOfSize:font] constrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];return sizeToFit.width;\
+}()
+
+//获取文字高度
+#define WORD_H(str,font) ^(){\
+   CGSize sizeToFit = [str sizeWithFont:[UIFont systemFontOfSize:font] constrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];return sizeToFit.height;\
+}()
+
+
+// 单例
+#undef    AS_SINGLETON
+#define AS_SINGLETON( __class ) \
+        - (__class *)sharedInstance; \
+        + (__class *)sharedInstance;
+
+#undef    DEF_SINGLETON
+#define DEF_SINGLETON( __class ) \
+        - (__class *)sharedInstance \
+        { \
+            return [__class sharedInstance]; \
+        } \
+        + (__class *)sharedInstance \
+        { \
+            static dispatch_once_t once; \
+            static __class * __singleton__; \
+            dispatch_once( &once, ^{ __singleton__ = [[[self class] alloc] init]; } ); \
+            return __singleton__; \
+        }
+
+
+
+
+
+#define MLayoutCommonMargin (12.0f)
+
+/**
+ *  获得RGB的UIColor
+ */
+#define WHColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+/**
+ *  获得RGBA的UIColor
+ */
+#define WHColorWithAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define HEXCOLOR(rgbValue)                                                                                             \
+    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0                                               \
+    green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0                                                  \
+    blue:((float)(rgbValue & 0xFF)) / 255.0                                                           \
+    alpha:1.0]
+ 
+
+// 系统版本
+#define SystemVersion [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_HEIGHT_MINUS_STATUSBAR ([[UIScreen mainScreen] bounds].size.height - CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]))
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IPHONE_STATUS_BAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+#define IPHONE_NAVIGATION_BAR_HEIGHT 44
+
+#define IPHONE_6P_SCREEN_MIN_LENGTH 414
+#define IPHONE_6P_SCREEN_MAX_LENGTH 736
+
+#define IPHONE_6_SCREEN_MIN_LENGTH 375
+#define IPHONE_6_SCREEN_MAX_LENGTH 667
+
+#define IPHONE_5_SCREEN_MIN_LENGTH 320
+#define IPHONE_5_SCREEN_MAX_LENGTH 568
+
+#define IPHONE_4_SCREEN_MIN_LENGTH 320
+#define IPHONE_4_SCREEN_MAX_LENGTH 480
+
+#define IS_IPHONE_11 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IS_IPHONE_11PRO ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IS_IPHONE_11PROMAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0) // iPhone X
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0) // 414x736
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0) // 375x667
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0) // 5\5s 320x568
+#define IS_IPHONE_4 (IS_IPHONE && SCREEN_MAX_LENGTH == 480.0) // 4\4s\3GS 320x480
+
+
+#define IPHONE_HASNOTCH(view)     (iphone_viewSafeAreaInserts(view).bottom > 0)
+
+// Status bar height.
+#define IPHONE_StatusBarHeight(view)    (IPHONE_HASNOTCH(view) ? 44.f : 20.f)
+
+// Navigation bar height.
+#define IPHONE_NavigationBarHeight  44.f
+
+// Tabbar height.
+#define IPHONE_TabbarHeight(view)         (IPHONE_HASNOTCH(view) ? (49.f+34.f) : 49.f)
+
+// Tabbar safe bottom margin.
+#define IPHONE_TabbarSafeBottomMargin(view)         (IPHONE_HASNOTCH(view) ? 34.f : 0.f)
+
+// Status bar & navigation bar height.
+#define IPHONE_StatusBarAndNavigationBarHeight(view)  (IPHONE_HASNOTCH(view) ? 88.f : 64.f)
+
+static inline UIEdgeInsets iphone_viewSafeAreaInserts(UIView * view)
+{
+    UIEdgeInsets insets;
+    if(@available(iOS 11.0, *)) {
+        insets = view.safeAreaInsets;
+    } else {
+        insets = UIEdgeInsetsZero;
+    }
+    return insets;
+}
+
+#define IPHONE_ViewSafeAreInsets(view) ({ \
+    UIEdgeInsets insets; \
+    if(@available(iOS 11.0, *)) {\
+        insets = view.safeAreaInsets; \
+    } else {\
+        insets = UIEdgeInsetsZero;} insets;\
+    })
