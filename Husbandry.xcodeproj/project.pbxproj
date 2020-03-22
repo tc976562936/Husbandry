@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00246E1D2427662200BF924E /* HMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00246E1C2427662200BF924E /* HMineHeaderView.m */; };
+		00246E222427958E00BF924E /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 00246E212427958E00BF924E /* Launch.png */; };
+		00246E25242797BA00BF924E /* HMineShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00246E24242797BA00BF924E /* HMineShopTableViewCell.m */; };
 		007D31DB242706140041657A /* GroupBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 007D31D5242706140041657A /* GroupBean.m */; };
 		007D31DC242706140041657A /* RoleBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 007D31D9242706140041657A /* RoleBean.m */; };
 		007D31DD242706140041657A /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 007D31DA242706140041657A /* UserData.m */; };
@@ -51,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00246E1B2427662200BF924E /* HMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMineHeaderView.h; sourceTree = "<group>"; };
+		00246E1C2427662200BF924E /* HMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMineHeaderView.m; sourceTree = "<group>"; };
+		00246E212427958E00BF924E /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
+		00246E23242797BA00BF924E /* HMineShopTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMineShopTableViewCell.h; sourceTree = "<group>"; };
+		00246E24242797BA00BF924E /* HMineShopTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMineShopTableViewCell.m; sourceTree = "<group>"; };
 		007D31D5242706140041657A /* GroupBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupBean.m; sourceTree = "<group>"; };
 		007D31D6242706140041657A /* RoleBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleBean.h; sourceTree = "<group>"; };
 		007D31D7242706140041657A /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
@@ -58,7 +66,7 @@
 		007D31D9242706140041657A /* RoleBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleBean.m; sourceTree = "<group>"; };
 		007D31DA242706140041657A /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		007D31DE242708170041657A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		00D22862241E0042007E0B02 /* 牧云.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "牧云.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D22862241E0042007E0B02 /* 黔牧云.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "黔牧云.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D22865241E0042007E0B02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00D22866241E0042007E0B02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		00D22871241E0044007E0B02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +139,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00246E1A2427661000BF924E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00246E1B2427662200BF924E /* HMineHeaderView.h */,
+				00246E1C2427662200BF924E /* HMineHeaderView.m */,
+				00246E23242797BA00BF924E /* HMineShopTableViewCell.h */,
+				00246E24242797BA00BF924E /* HMineShopTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00246E1E2427951D00BF924E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				00246E212427958E00BF924E /* Launch.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		007D31D4242706140041657A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +186,7 @@
 		00D22863241E0042007E0B02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00D22862241E0042007E0B02 /* 牧云.app */,
+				00D22862241E0042007E0B02 /* 黔牧云.app */,
 				00D2287D241E0044007E0B02 /* HusbandryTests.xctest */,
 				00D22888241E0044007E0B02 /* HusbandryUITests.xctest */,
 			);
@@ -175,6 +202,7 @@
 				00D228A2241E032C007E0B02 /* PrefixHeader.pch */,
 				00D22865241E0042007E0B02 /* AppDelegate.h */,
 				00D22866241E0042007E0B02 /* AppDelegate.m */,
+				00246E1E2427951D00BF924E /* Resource */,
 				007D31DE242708170041657A /* LaunchScreen.xib */,
 				00D22871241E0044007E0B02 /* Assets.xcassets */,
 				00D22876241E0044007E0B02 /* Info.plist */,
@@ -310,9 +338,9 @@
 		00D228B9241E0411007E0B02 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				00246E1A2427661000BF924E /* Views */,
 				00D228BA241E0411007E0B02 /* ViewModes */,
 				00D228BB241E0411007E0B02 /* Controllers */,
-				00D228BC241E0411007E0B02 /* Views */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -331,13 +359,6 @@
 				00D228CC241E0481007E0B02 /* HMineViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		00D228BC241E0411007E0B02 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		00D228BD241E0411007E0B02 /* Index */ = {
@@ -480,7 +501,7 @@
 			);
 			name = Husbandry;
 			productName = Husbandry;
-			productReference = 00D22862241E0042007E0B02 /* 牧云.app */;
+			productReference = 00D22862241E0042007E0B02 /* 黔牧云.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00D2287C241E0044007E0B02 /* HusbandryTests */ = {
@@ -567,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00246E222427958E00BF924E /* Launch.png in Resources */,
 				007D31DF242708170041657A /* LaunchScreen.xib in Resources */,
 				00D22872241E0044007E0B02 /* Assets.xcassets in Resources */,
 			);
@@ -644,10 +666,12 @@
 				00D228AC241E032C007E0B02 /* NetTool.m in Sources */,
 				00D22878241E0044007E0B02 /* main.m in Sources */,
 				00D228AA241E032C007E0B02 /* Reachability.m in Sources */,
+				00246E25242797BA00BF924E /* HMineShopTableViewCell.m in Sources */,
 				00D228D0241E0490007E0B02 /* HIndexViewController.m in Sources */,
 				00D228E0241E0D40007E0B02 /* HThirdLoginView.m in Sources */,
 				00D228D3241E05FF007E0B02 /* HBuyViewController.m in Sources */,
 				00D228AB241E032C007E0B02 /* HSNetWorkingAPIClient.m in Sources */,
+				00246E1D2427662200BF924E /* HMineHeaderView.m in Sources */,
 				007D31DB242706140041657A /* GroupBean.m in Sources */,
 				00D228DD241E0A90007E0B02 /* HRegisteredViewController.m in Sources */,
 				00D228AF241E032C007E0B02 /* MBaseNavigationController.m in Sources */,
@@ -806,15 +830,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J45R7ZYGYH;
-				GCC_PREFIX_HEADER = /Users/edz/Desktop/Husbandry/Husbandry/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Husbandry/PrefixHeader.pch";
 				INFOPLIST_FILE = Husbandry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = husbandry.Husbandry;
-				PRODUCT_NAME = "牧云";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tidemedia.jushi;
+				PRODUCT_NAME = "黔牧云";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -826,15 +850,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J45R7ZYGYH;
-				GCC_PREFIX_HEADER = /Users/edz/Desktop/Husbandry/Husbandry/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Husbandry/PrefixHeader.pch";
 				INFOPLIST_FILE = Husbandry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = husbandry.Husbandry;
-				PRODUCT_NAME = "牧云";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tidemedia.jushi;
+				PRODUCT_NAME = "黔牧云";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

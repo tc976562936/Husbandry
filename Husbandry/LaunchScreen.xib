@@ -13,8 +13,8 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="698"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lasso" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-i2-q1G">
-                    <rect key="frame" x="0.0" y="1.5" width="480" height="697"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-i2-q1G">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="698"/>
                 </imageView>
             </subviews>
             <accessibility key="accessibilityConfiguration">
@@ -32,6 +32,6 @@
         </view>
     </objects>
     <resources>
-        <image name="lasso" catalog="system" width="64" height="58"/>
+        <image name="Launch.png" width="337.5" height="600"/>
     </resources>
 </document>

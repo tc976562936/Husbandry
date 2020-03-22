@@ -44,7 +44,7 @@
     if (user.sessionId != nil) {
         self.window.rootViewController = [[MTabBarViewController alloc] init];
     } else {
-        self.window.rootViewController = [[HLoginViewController alloc] init];
+        self.window.rootViewController = [[MBaseNavigationController alloc] initWithRootViewController:[[HLoginViewController alloc] init]];
     }
     [self.window makeKeyAndVisible];
 }
